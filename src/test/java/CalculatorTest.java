@@ -1,3 +1,4 @@
+import config.Config;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -60,7 +61,7 @@ public class CalculatorTest {
     @Test
     public void testDivideByZero(){
         Exception exception = assertThrows(IllegalArgumentException.class, () -> calculator.divide(1,0));
-        String expectedMessage = "Ints can NOT be divided by zero";
+        String expectedMessage = Config.DIVIDE_BY_ZERO_MESSAGE;
         String actualMessage = exception.getMessage();
         assertEquals(expectedMessage, actualMessage, "the exception is not being thrown for dividing by zero");
     }

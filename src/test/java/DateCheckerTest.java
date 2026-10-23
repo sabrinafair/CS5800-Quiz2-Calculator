@@ -1,3 +1,4 @@
+import config.Config;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -24,7 +25,7 @@ public class DateCheckerTest {
     public void testInvalidInput(){
         DateChecker.Months actual = null;
         Exception exception = assertThrows(IllegalArgumentException.class, () -> dateChecker.has31days(actual));
-        String expectedMessage = "NULL Input not allowed";
+        String expectedMessage = Config.NULL_VALUE_PASSED_MESSAGE;
         String actualMessage = exception.getMessage();
         assertEquals(expectedMessage, actualMessage, "The input was not null");
     }

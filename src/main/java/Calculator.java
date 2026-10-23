@@ -1,3 +1,5 @@
+import config.Config;
+
 public class Calculator {
     public int sum(int x, int y){
         return x+y;
@@ -12,7 +14,7 @@ public class Calculator {
     }
 
     public double divide(int x, int y){
-        if(y==0) throw new IllegalArgumentException("Ints can NOT be divided by zero");
+        if(y==0) throw new IllegalArgumentException(Config.DIVIDE_BY_ZERO_MESSAGE);
         return (double) x / y;
     }
 

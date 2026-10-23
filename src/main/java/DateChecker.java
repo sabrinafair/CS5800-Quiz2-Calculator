@@ -1,3 +1,5 @@
+import config.Config;
+
 import java.util.Arrays;
 
 public class DateChecker {
@@ -19,7 +21,7 @@ public class DateChecker {
     private DateChecker.Months[] months31Days = {Months.JANUARY,Months.MARCH,Months.MAY,Months.JULY,Months.AUGUST,Months.OCTOBER,Months.DECEMBER};
 
     public boolean has31days(Months month){
-        if(month == null) throw new IllegalArgumentException("NULL Input not allowed");
+        if(month == null) throw new IllegalArgumentException(Config.NULL_VALUE_PASSED_MESSAGE);
         return Arrays.toString(months31Days).contains(month.toString());
     }
 }
