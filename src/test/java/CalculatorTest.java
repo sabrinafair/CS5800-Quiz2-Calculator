@@ -9,16 +9,37 @@ public class CalculatorTest {
 
     //Following Build, Operate, Check
     @Test
-    public void testSum(){
+    public void testSumPositive(){
         int expected = 3;
         int actual = calculator.sum(1, 2); //1+2=3
         assertEquals(expected,actual);
     }
 
     @Test
-    public void testSubtract(){
+    public void testNegative(){
+        int expected = -3;
+        int actual = calculator.sum(-1, -2); //1+2=3
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testSumZero(){
+        int expected = 0;
+        int actual = calculator.sum(0, 0); //1+2=3
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testSubtractPositive(){
         int expected = 1;
         int actual = calculator.subtract(2, 1); //2-1=1
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testSubtractNegative(){
+        int expected = -1;
+        int actual = calculator.subtract(-2, -1); //-2-(-1)=-1
         assertEquals(expected,actual);
     }
 
@@ -27,6 +48,21 @@ public class CalculatorTest {
         int expected = 2;
         int actual = calculator.multiply(2, 1); //2*1=2
         assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testMultiplyZero(){
+        int expected = 0;
+        int actual = calculator.multiply(0, 1); //0*1=0
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testDivideByZero(){
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> calculator.divide(1,0));
+        String expectedMessage = "Ints can NOT be divided by zero";
+        String actualMessage = exception.getMessage();
+        assertEquals(expectedMessage, actualMessage);
     }
 
     @Test
@@ -55,11 +91,5 @@ public class CalculatorTest {
         assertArrayEquals(expected,actual);
     }
 
-    @Test
-    public void testDivideByZero(){
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> calculator.divide(1,0));
-        String expectedMessage = "Ints can NOT be divided by zero";
-        String actualMessage = exception.getMessage();
-        assertEquals(expectedMessage, actualMessage);
-    }
+
 }
