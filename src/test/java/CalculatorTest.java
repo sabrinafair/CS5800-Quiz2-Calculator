@@ -7,11 +7,11 @@ public class CalculatorTest {
 
     Calculator calculator = new Calculator();
 
+    //Following Build, Operate, Check
     @Test
     public void testSum(){
-        int expected = -1;
-        int actual = calculator.sum(1, -1);
-
+        int expected = 3;
+        int actual = calculator.sum(1, 2); //1+2=3
         assertEquals(expected,actual);
     }
 
