@@ -19,4 +19,13 @@ public class DateCheckerTest {
     public void testNot31DayMonths(DateChecker.Months month){
         assertFalse(dateChecker.has31days(month));
     }
+
+    @Test
+    public void testInvalidInput(){
+        DateChecker.Months actual = null;
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> dateChecker.has31days(actual));
+        String expectedMessage = "NULL Input not allowed";
+        String actualMessage = exception.getMessage();
+        assertEquals(expectedMessage, actualMessage);
+    }
 }
