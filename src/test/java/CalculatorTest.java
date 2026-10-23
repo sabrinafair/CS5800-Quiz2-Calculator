@@ -81,14 +81,14 @@ public class CalculatorTest {
     @Test
     public void testIsOdd(){
         boolean actual = calculator.isEven(3);
-        assertFalse(actual);
+        assertFalse(actual, "The odd number being passed is not being returned as false for isEven check");
     }
 
     @Test
     public void testIncrementArray(){
         int[] expected = new int[]{2,3,4};
         int[] actual = calculator.incrementArrays(new int[]{1,2,3});
-        assertArrayEquals(expected,actual);
+        assertArrayEquals(expected,actual, "the array is not incrementing correctly");
     }
 
 
