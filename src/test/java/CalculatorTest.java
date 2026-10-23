@@ -12,28 +12,28 @@ public class CalculatorTest {
     public void testSumPositive(){
         int expected = 3;
         int actual = calculator.sum(1, 2); //1+2=3
-        assertEquals(expected,actual);
+        assertEquals(expected,actual, "the given sum is not equal to expected");
     }
 
     @Test
     public void testNegative(){
         int expected = -3;
         int actual = calculator.sum(-1, -2); //1+2=3
-        assertEquals(expected,actual);
+        assertEquals(expected,actual, "the given negative test is not equal to expected");
     }
 
     @Test
     public void testSumZero(){
         int expected = 0;
         int actual = calculator.sum(0, 0); //1+2=3
-        assertEquals(expected,actual);
+        assertEquals(expected,actual, "the sum of zeros is not equal zero");
     }
 
     @Test
     public void testSubtractPositive(){
         int expected = 1;
         int actual = calculator.subtract(2, 1); //2-1=1
-        assertEquals(expected,actual);
+        assertEquals(expected,actual, "subtracting the given two positive numbers is not equal to expected");
     }
 
     @Test
