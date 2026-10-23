@@ -40,21 +40,21 @@ public class CalculatorTest {
     public void testSubtractNegative(){
         int expected = -1;
         int actual = calculator.subtract(-2, -1); //-2-(-1)=-1
-        assertEquals(expected,actual);
+        assertEquals(expected,actual, "substracting negative numbers is not giving expected result");
     }
 
     @Test
     public void testMultiply(){
         int expected = 2;
         int actual = calculator.multiply(2, 1); //2*1=2
-        assertEquals(expected,actual);
+        assertEquals(expected,actual, "multiplying the two numbers is not giving the expected result");
     }
 
     @Test
     public void testMultiplyZero(){
         int expected = 0;
         int actual = calculator.multiply(0, 1); //0*1=0
-        assertEquals(expected,actual);
+        assertEquals(expected,actual, "multiplying by zero is not giving zero");
     }
 
     @Test
