@@ -22,4 +22,18 @@ public class CalculatorTest {
         assertEquals(expected,actual);
     }
 
+    @Test
+    public void testMultiply(){
+        int expected = 2;
+        int actual = calculator.multiply(2, 1); //2*1=2
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testDivide(){
+        double expected = 0.5;
+        double actual = calculator.divide(1, 2); // 1/2=0.5
+        assertEquals(expected,actual);
+    }
+
 }
