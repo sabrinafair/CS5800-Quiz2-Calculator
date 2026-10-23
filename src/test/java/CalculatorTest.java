@@ -16,7 +16,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testNegative(){
+    public void testSumNegative(){
         int expected = -3;
         int actual = calculator.sum(-1, -2); //1+2=3
         assertEquals(expected,actual, "the given negative test is not equal to expected");
@@ -40,7 +40,7 @@ public class CalculatorTest {
     public void testSubtractNegative(){
         int expected = -1;
         int actual = calculator.subtract(-2, -1); //-2-(-1)=-1
-        assertEquals(expected,actual, "substracting negative numbers is not giving expected result");
+        assertEquals(expected,actual, "subtracting negative numbers is not giving expected result");
     }
 
     @Test
