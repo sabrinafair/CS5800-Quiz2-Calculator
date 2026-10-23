@@ -62,20 +62,20 @@ public class CalculatorTest {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> calculator.divide(1,0));
         String expectedMessage = "Ints can NOT be divided by zero";
         String actualMessage = exception.getMessage();
-        assertEquals(expectedMessage, actualMessage);
+        assertEquals(expectedMessage, actualMessage, "the exception is not being thrown for dividing by zero");
     }
 
     @Test
     public void testDivide(){
         double expected = 0.5;
         double actual = calculator.divide(1, 2); // 1/2=0.5
-        assertEquals(expected,actual);
+        assertEquals(expected,actual, "the division is not returning the correct result");
     }
 
     @Test
     public void testIsEven(){
         boolean actual = calculator.isEven(2);
-        assertTrue(actual);
+        assertTrue(actual, "the even number being passed is not being shown as even");
     }
 
     @Test
