@@ -26,6 +26,6 @@ public class DateCheckerTest {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> dateChecker.has31days(actual));
         String expectedMessage = "NULL Input not allowed";
         String actualMessage = exception.getMessage();
-        assertEquals(expectedMessage, actualMessage);
+        assertEquals(expectedMessage, actualMessage, "The input was not null");
     }
 }
